@@ -1,0 +1,30 @@
+---
+ip: "192.168.10.10"
+memory: 2048
+cpus: 2
+provider: virtualbox
+hostname: homestead
+
+authorize: ~/.ssh/id_rsa.pub
+
+keys:
+    - ~/.ssh/id_rsa
+
+folders:
+    - map: 'C:\\Dev\\Oficina 2\\api'
+      to: /home/vagrant/code/oficina2/api
+      type: "nfs"
+
+sites:
+    - map: api.sudotec.test
+      to: /home/vagrant/code/oficina2/api/public
+
+databases:
+    - sudotec
+
+# ports:
+#     - send: 50000
+#       to: 5000
+#     - send: 7777
+#       to: 777
+#       protocol: udp
