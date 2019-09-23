@@ -1,0 +1,510 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/all.js"></script>
+
+
+          <script>
+        $(function() {
+            setupLanguages(["bash","javascript"]);
+        });
+      </script>
+      </head>
+
+  <body class="">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+        <img src="images/logo.png" />
+                    <div class="lang-selector">
+                                  <a href="#" data-language-name="bash">bash</a>
+                                  <a href="#" data-language-name="javascript">javascript</a>
+                            </div>
+                            <div class="search">
+              <input type="text" class="search" id="input-search" placeholder="Search">
+            </div>
+            <ul class="search-results"></ul>
+              <div id="toc">
+      </div>
+                    <ul class="toc-footer">
+                                  <li><a href='http://github.com/mpociot/documentarian'>Documentation Powered by Documentarian</a></li>
+                            </ul>
+            </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+          <!-- START_INFO -->
+<h1>Info</h1>
+<p>Welcome to the generated API reference.
+<a href="http://api.sudotec.test/docs/collection.json">Get Postman Collection</a></p>
+<!-- END_INFO -->
+<h1>Passport login</h1>
+<!-- START_a925a8d22b3615f12fca79456d286859 -->
+<h2>Login</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST "http://api.sudotec.test/api/auth/login" \
+    -H "Content-Type: application/json" \
+    -d '{"username":"iure","password":"ut"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL("http://api.sudotec.test/api/auth/login");
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+}
+
+let body = {
+    "username": "iure",
+    "password": "ut"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/auth/login</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>username</td>
+<td>string</td>
+<td>required</td>
+<td>Email of the user</td>
+</tr>
+<tr>
+<td>password</td>
+<td>string</td>
+<td>required</td>
+<td>Password of the user</td>
+</tr>
+</tbody>
+</table>
+<!-- END_a925a8d22b3615f12fca79456d286859 -->
+<!-- START_16928cb8fc6adf2d9bb675d62a2095c5 -->
+<h2>Logout</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET -G "http://api.sudotec.test/api/auth/logout" </code></pre>
+<pre><code class="language-javascript">const url = new URL("http://api.sudotec.test/api/auth/logout");
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (401):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Unauthenticated."
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/auth/logout</code></p>
+<!-- END_16928cb8fc6adf2d9bb675d62a2095c5 -->
+<h1>Register user</h1>
+<!-- START_2e1c96dcffcfe7e0eb58d6408f1d619e -->
+<h2>Create a new user</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST "http://api.sudotec.test/api/auth/register" \
+    -H "Content-Type: application/json" \
+    -d '{"name":"deleniti","email":"deleniti","type":"id"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL("http://api.sudotec.test/api/auth/register");
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+}
+
+let body = {
+    "name": "deleniti",
+    "email": "deleniti",
+    "type": "id"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/auth/register</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>required</td>
+<td>Name of the new user</td>
+</tr>
+<tr>
+<td>email</td>
+<td>email</td>
+<td>required</td>
+<td>Email of the new user</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>required</td>
+<td>Type of the new user ('admin' or 'teacher')</td>
+</tr>
+</tbody>
+</table>
+<!-- END_2e1c96dcffcfe7e0eb58d6408f1d619e -->
+<h1>general</h1>
+<!-- START_7c1e0ac0639bb1be6ffd9043492c477a -->
+<h2>_ignition/health-check</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET -G "http://api.sudotec.test/_ignition/health-check" </code></pre>
+<pre><code class="language-javascript">const url = new URL("http://api.sudotec.test/_ignition/health-check");
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (404):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": ""
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET _ignition/health-check</code></p>
+<!-- END_7c1e0ac0639bb1be6ffd9043492c477a -->
+<!-- START_e5f8cf3530eb18016c5b38d338c824a4 -->
+<h2>_ignition/execute-solution</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST "http://api.sudotec.test/_ignition/execute-solution" </code></pre>
+<pre><code class="language-javascript">const url = new URL("http://api.sudotec.test/_ignition/execute-solution");
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST _ignition/execute-solution</code></p>
+<!-- END_e5f8cf3530eb18016c5b38d338c824a4 -->
+<!-- START_c7878c22064327a038e101c534d2690d -->
+<h2>_ignition/share-report</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST "http://api.sudotec.test/_ignition/share-report" </code></pre>
+<pre><code class="language-javascript">const url = new URL("http://api.sudotec.test/_ignition/share-report");
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST _ignition/share-report</code></p>
+<!-- END_c7878c22064327a038e101c534d2690d -->
+<!-- START_022a636baa67209b79bda81cb8c2b0c5 -->
+<h2>_ignition/scripts/{script}</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET -G "http://api.sudotec.test/_ignition/scripts/1" </code></pre>
+<pre><code class="language-javascript">const url = new URL("http://api.sudotec.test/_ignition/scripts/1");
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (404):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": ""
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET _ignition/scripts/{script}</code></p>
+<!-- END_022a636baa67209b79bda81cb8c2b0c5 -->
+<!-- START_f58213cd71dff813cecd421259a65e22 -->
+<h2>_ignition/styles/{style}</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET -G "http://api.sudotec.test/_ignition/styles/1" </code></pre>
+<pre><code class="language-javascript">const url = new URL("http://api.sudotec.test/_ignition/styles/1");
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (404):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": ""
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET _ignition/styles/{style}</code></p>
+<!-- END_f58213cd71dff813cecd421259a65e22 -->
+<!-- START_a09d20357336aa979ecd8e3972ac9168 -->
+<h2>Authorize a client to access the user&#039;s account.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST "http://api.sudotec.test/oauth/token" </code></pre>
+<pre><code class="language-javascript">const url = new URL("http://api.sudotec.test/oauth/token");
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST oauth/token</code></p>
+<!-- END_a09d20357336aa979ecd8e3972ac9168 -->
+<!-- START_d6a56149547e03307199e39e03e12d1c -->
+<h2>Get all of the authorized tokens for the authenticated user.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET -G "http://api.sudotec.test/oauth/tokens" </code></pre>
+<pre><code class="language-javascript">const url = new URL("http://api.sudotec.test/oauth/tokens");
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (401):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Unauthenticated."
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET oauth/tokens</code></p>
+<!-- END_d6a56149547e03307199e39e03e12d1c -->
+<!-- START_a9a802c25737cca5324125e5f60b72a5 -->
+<h2>Delete the given token.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X DELETE "http://api.sudotec.test/oauth/tokens/1" </code></pre>
+<pre><code class="language-javascript">const url = new URL("http://api.sudotec.test/oauth/tokens/1");
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>DELETE oauth/tokens/{token_id}</code></p>
+<!-- END_a9a802c25737cca5324125e5f60b72a5 -->
+<!-- START_0ede357cfa17e8746504eb85c997884f -->
+<h2>Send a reset link to the given user.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST "http://api.sudotec.test/api/auth/password/email" </code></pre>
+<pre><code class="language-javascript">const url = new URL("http://api.sudotec.test/api/auth/password/email");
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/auth/password/email</code></p>
+<!-- END_0ede357cfa17e8746504eb85c997884f -->
+<!-- START_b24783c060b90093f81dc015cbcd068f -->
+<h2>Reset the given user&#039;s password.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST "http://api.sudotec.test/api/auth/password/reset" </code></pre>
+<pre><code class="language-javascript">const url = new URL("http://api.sudotec.test/api/auth/password/reset");
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/auth/password/reset</code></p>
+<!-- END_b24783c060b90093f81dc015cbcd068f -->
+<!-- START_2b6e5a4b188cb183c7e59558cce36cb6 -->
+<h2>api/user</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET -G "http://api.sudotec.test/api/user" </code></pre>
+<pre><code class="language-javascript">const url = new URL("http://api.sudotec.test/api/user");
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (401):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Unauthenticated."
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/user</code></p>
+<!-- END_2b6e5a4b188cb183c7e59558cce36cb6 -->
+<!-- START_fc1e4f6a697e3c48257de845299b71d5 -->
+<h2>api/users</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET -G "http://api.sudotec.test/api/users" </code></pre>
+<pre><code class="language-javascript">const url = new URL("http://api.sudotec.test/api/users");
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (401):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Unauthenticated."
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/users</code></p>
+<!-- END_fc1e4f6a697e3c48257de845299b71d5 -->
+      </div>
+      <div class="dark-box">
+                        <div class="lang-selector">
+                                    <a href="#" data-language-name="bash">bash</a>
+                                    <a href="#" data-language-name="javascript">javascript</a>
+                              </div>
+                </div>
+    </div>
+  </body>
+</html>

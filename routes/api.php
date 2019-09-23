@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
+//use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +13,30 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+/*
+|--------------------------------------------------------------------------
+| Login Routes
+|--------------------------------------------------------------------------
+*/
+
+use Illuminate\Support\Facades\Route;
+use function foo\func;
+
+Route::prefix('auth')->group(function () {
+    Route::middleware([])->group(function () {
+        Route::post('/login', 'Auth\AuthController@login');
+        Route::middleware(['auth:api', 'role:admin'])->post('/register', 'Auth\RegisterController@register');
+        Route::post('/password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+        Route::post('/password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
+        Route::post('/complete-register', function () {
+
+        })->name('register.complete');
+    });
+
+    Route::middleware('auth:api')->group(function () {
+        Route::get('/logout', 'Auth\AuthController@logout');
+    });
 });
+
+Route::middleware(['auth:api', 'role:admin'])->get('/user', 'UserController@show');
+Route::middleware(['auth:api', 'role:admin'])->get('/users', 'UserController@index');
