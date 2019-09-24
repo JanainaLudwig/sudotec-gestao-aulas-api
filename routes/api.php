@@ -1,6 +1,6 @@
 <?php
 
-//use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,26 +15,33 @@
 
 /*
 |--------------------------------------------------------------------------
-| Login Routes
+| Admin Routes
 |--------------------------------------------------------------------------
 */
 
-use Illuminate\Support\Facades\Route;
-use function foo\func;
+Route::middleware(['auth:api', 'role:admin'])->group(function () {
+    Route::apiResource('projects', 'ProjectController');
+});
 
-Route::prefix('auth')->group(function () {
+
+/*
+|--------------------------------------------------------------------------
+| Login Routes
+|--------------------------------------------------------------------------
+*/
+Route::prefix('auth')->namespace('Auth')->group(function () {
     Route::middleware([])->group(function () {
-        Route::post('/login', 'Auth\AuthController@login');
-        Route::middleware(['auth:api', 'role:admin'])->post('/register', 'Auth\RegisterController@register');
-        Route::post('/password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-        Route::post('/password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
+        Route::post('/login', 'AuthController@login');
+        Route::middleware(['auth:api', 'role:admin'])->post('/register', 'RegisterController@register');
+        Route::post('/password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+        Route::post('/password/reset', 'ResetPasswordController@reset')->name('password.update');
         Route::post('/complete-register', function () {
 
         })->name('register.complete');
     });
 
     Route::middleware('auth:api')->group(function () {
-        Route::get('/logout', 'Auth\AuthController@logout');
+        Route::get('/logout', 'AuthController@logout');
     });
 });
 

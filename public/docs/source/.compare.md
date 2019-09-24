@@ -30,8 +30,9 @@ Welcome to the generated API reference.
 
 ```bash
 curl -X POST "http://api.sudotec.test/api/auth/login" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ" \
     -H "Content-Type: application/json" \
-    -d '{"username":"iure","password":"ut"}'
+    -d '{"username":"id","password":"iure"}'
 
 ```
 
@@ -39,13 +40,14 @@ curl -X POST "http://api.sudotec.test/api/auth/login" \
 const url = new URL("http://api.sudotec.test/api/auth/login");
 
 let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ",
     "Content-Type": "application/json",
     "Accept": "application/json",
 }
 
 let body = {
-    "username": "iure",
-    "password": "ut"
+    "username": "id",
+    "password": "iure"
 }
 
 fetch(url, {
@@ -77,13 +79,15 @@ Parameter | Type | Status | Description
 > Example request:
 
 ```bash
-curl -X GET -G "http://api.sudotec.test/api/auth/logout" 
+curl -X GET -G "http://api.sudotec.test/api/auth/logout" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ"
 ```
 
 ```javascript
 const url = new URL("http://api.sudotec.test/api/auth/logout");
 
 let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ",
     "Accept": "application/json",
     "Content-Type": "application/json",
 }
@@ -111,6 +115,243 @@ fetch(url, {
 
 <!-- END_16928cb8fc6adf2d9bb675d62a2095c5 -->
 
+#Projects
+
+
+<!-- START_ec4273285234cd3b3206c1cb3f4b2039 -->
+## All projects
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+> Example request:
+
+```bash
+curl -X GET -G "http://api.sudotec.test/api/auth/Project" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ"
+```
+
+```javascript
+const url = new URL("http://api.sudotec.test/api/auth/Project");
+
+let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ",
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (401):
+
+```json
+{
+    "message": "Unauthenticated."
+}
+```
+
+### HTTP Request
+`GET api/auth/Project`
+
+
+<!-- END_ec4273285234cd3b3206c1cb3f4b2039 -->
+
+<!-- START_321fe0393ea5b9d1aeed8aad0b021318 -->
+## Create project
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+> Example request:
+
+```bash
+curl -X POST "http://api.sudotec.test/api/auth/Project" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ" \
+    -H "Content-Type: application/json" \
+    -d '{"name":"qui","description":"harum","image":"id","status":"ut"}'
+
+```
+
+```javascript
+const url = new URL("http://api.sudotec.test/api/auth/Project");
+
+let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+}
+
+let body = {
+    "name": "qui",
+    "description": "harum",
+    "image": "id",
+    "status": "ut"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`POST api/auth/Project`
+
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    name | string |  required  | Name of the project
+    description | string |  optional  | Description of the project
+    image | image |  required  | Image of the project
+    status | string |  required  | Status of the project (enum: ['active', 'inactive'])
+
+<!-- END_321fe0393ea5b9d1aeed8aad0b021318 -->
+
+<!-- START_33e46fea0e914390d4b4ad1e9226c9b8 -->
+## Get project
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+> Example request:
+
+```bash
+curl -X GET -G "http://api.sudotec.test/api/auth/Project/1" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ"
+```
+
+```javascript
+const url = new URL("http://api.sudotec.test/api/auth/Project/1");
+
+let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ",
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (401):
+
+```json
+{
+    "message": "Unauthenticated."
+}
+```
+
+### HTTP Request
+`GET api/auth/Project/{Project}`
+
+
+<!-- END_33e46fea0e914390d4b4ad1e9226c9b8 -->
+
+<!-- START_393ac4c86f620d0735153b255b463681 -->
+## Update project
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+> Example request:
+
+```bash
+curl -X PUT "http://api.sudotec.test/api/auth/Project/1" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ" \
+    -H "Content-Type: application/json" \
+    -d '{"name":"dolores","description":"optio","image":"nemo","status":"veritatis"}'
+
+```
+
+```javascript
+const url = new URL("http://api.sudotec.test/api/auth/Project/1");
+
+let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+}
+
+let body = {
+    "name": "dolores",
+    "description": "optio",
+    "image": "nemo",
+    "status": "veritatis"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`PUT api/auth/Project/{Project}`
+
+`PATCH api/auth/Project/{Project}`
+
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    name | string |  required  | Name of the project
+    description | string |  optional  | Description of the project
+    image | image |  required  | Image of the project
+    status | string |  required  | Status of the project (enum: ['active', 'inactive'])
+
+<!-- END_393ac4c86f620d0735153b255b463681 -->
+
+<!-- START_cf8754072efc7d220bdfcd73944f4de6 -->
+## Delete project
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+> Example request:
+
+```bash
+curl -X DELETE "http://api.sudotec.test/api/auth/Project/1" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ"
+```
+
+```javascript
+const url = new URL("http://api.sudotec.test/api/auth/Project/1");
+
+let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ",
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`DELETE api/auth/Project/{Project}`
+
+
+<!-- END_cf8754072efc7d220bdfcd73944f4de6 -->
+
 #Register user
 
 
@@ -121,8 +362,9 @@ fetch(url, {
 
 ```bash
 curl -X POST "http://api.sudotec.test/api/auth/register" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ" \
     -H "Content-Type: application/json" \
-    -d '{"name":"deleniti","email":"deleniti","type":"id"}'
+    -d '{"name":"est","email":"facere","type":"tempore"}'
 
 ```
 
@@ -130,14 +372,15 @@ curl -X POST "http://api.sudotec.test/api/auth/register" \
 const url = new URL("http://api.sudotec.test/api/auth/register");
 
 let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ",
     "Content-Type": "application/json",
     "Accept": "application/json",
 }
 
 let body = {
-    "name": "deleniti",
-    "email": "deleniti",
-    "type": "id"
+    "name": "est",
+    "email": "facere",
+    "type": "tempore"
 }
 
 fetch(url, {
@@ -172,13 +415,15 @@ Parameter | Type | Status | Description
 > Example request:
 
 ```bash
-curl -X GET -G "http://api.sudotec.test/_ignition/health-check" 
+curl -X GET -G "http://api.sudotec.test/_ignition/health-check" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ"
 ```
 
 ```javascript
 const url = new URL("http://api.sudotec.test/_ignition/health-check");
 
 let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ",
     "Accept": "application/json",
     "Content-Type": "application/json",
 }
@@ -211,13 +456,15 @@ fetch(url, {
 > Example request:
 
 ```bash
-curl -X POST "http://api.sudotec.test/_ignition/execute-solution" 
+curl -X POST "http://api.sudotec.test/_ignition/execute-solution" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ"
 ```
 
 ```javascript
 const url = new URL("http://api.sudotec.test/_ignition/execute-solution");
 
 let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ",
     "Accept": "application/json",
     "Content-Type": "application/json",
 }
@@ -243,13 +490,15 @@ fetch(url, {
 > Example request:
 
 ```bash
-curl -X POST "http://api.sudotec.test/_ignition/share-report" 
+curl -X POST "http://api.sudotec.test/_ignition/share-report" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ"
 ```
 
 ```javascript
 const url = new URL("http://api.sudotec.test/_ignition/share-report");
 
 let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ",
     "Accept": "application/json",
     "Content-Type": "application/json",
 }
@@ -275,13 +524,15 @@ fetch(url, {
 > Example request:
 
 ```bash
-curl -X GET -G "http://api.sudotec.test/_ignition/scripts/1" 
+curl -X GET -G "http://api.sudotec.test/_ignition/scripts/1" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ"
 ```
 
 ```javascript
 const url = new URL("http://api.sudotec.test/_ignition/scripts/1");
 
 let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ",
     "Accept": "application/json",
     "Content-Type": "application/json",
 }
@@ -314,13 +565,15 @@ fetch(url, {
 > Example request:
 
 ```bash
-curl -X GET -G "http://api.sudotec.test/_ignition/styles/1" 
+curl -X GET -G "http://api.sudotec.test/_ignition/styles/1" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ"
 ```
 
 ```javascript
 const url = new URL("http://api.sudotec.test/_ignition/styles/1");
 
 let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ",
     "Accept": "application/json",
     "Content-Type": "application/json",
 }
@@ -354,13 +607,15 @@ fetch(url, {
 > Example request:
 
 ```bash
-curl -X POST "http://api.sudotec.test/oauth/token" 
+curl -X POST "http://api.sudotec.test/oauth/token" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ"
 ```
 
 ```javascript
 const url = new URL("http://api.sudotec.test/oauth/token");
 
 let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ",
     "Accept": "application/json",
     "Content-Type": "application/json",
 }
@@ -387,13 +642,15 @@ fetch(url, {
 > Example request:
 
 ```bash
-curl -X GET -G "http://api.sudotec.test/oauth/tokens" 
+curl -X GET -G "http://api.sudotec.test/oauth/tokens" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ"
 ```
 
 ```javascript
 const url = new URL("http://api.sudotec.test/oauth/tokens");
 
 let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ",
     "Accept": "application/json",
     "Content-Type": "application/json",
 }
@@ -427,13 +684,15 @@ fetch(url, {
 > Example request:
 
 ```bash
-curl -X DELETE "http://api.sudotec.test/oauth/tokens/1" 
+curl -X DELETE "http://api.sudotec.test/oauth/tokens/1" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ"
 ```
 
 ```javascript
 const url = new URL("http://api.sudotec.test/oauth/tokens/1");
 
 let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ",
     "Accept": "application/json",
     "Content-Type": "application/json",
 }
@@ -460,13 +719,15 @@ fetch(url, {
 > Example request:
 
 ```bash
-curl -X POST "http://api.sudotec.test/api/auth/password/email" 
+curl -X POST "http://api.sudotec.test/api/auth/password/email" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ"
 ```
 
 ```javascript
 const url = new URL("http://api.sudotec.test/api/auth/password/email");
 
 let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ",
     "Accept": "application/json",
     "Content-Type": "application/json",
 }
@@ -493,13 +754,15 @@ fetch(url, {
 > Example request:
 
 ```bash
-curl -X POST "http://api.sudotec.test/api/auth/password/reset" 
+curl -X POST "http://api.sudotec.test/api/auth/password/reset" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ"
 ```
 
 ```javascript
 const url = new URL("http://api.sudotec.test/api/auth/password/reset");
 
 let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ",
     "Accept": "application/json",
     "Content-Type": "application/json",
 }
@@ -525,13 +788,15 @@ fetch(url, {
 > Example request:
 
 ```bash
-curl -X GET -G "http://api.sudotec.test/api/user" 
+curl -X GET -G "http://api.sudotec.test/api/user" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ"
 ```
 
 ```javascript
 const url = new URL("http://api.sudotec.test/api/user");
 
 let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ",
     "Accept": "application/json",
     "Content-Type": "application/json",
 }
@@ -564,13 +829,15 @@ fetch(url, {
 > Example request:
 
 ```bash
-curl -X GET -G "http://api.sudotec.test/api/users" 
+curl -X GET -G "http://api.sudotec.test/api/users" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ"
 ```
 
 ```javascript
 const url = new URL("http://api.sudotec.test/api/users");
 
 let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM2YTNmOTliYzBkZmE5MjA2Nzg0OTYwZGY1Njc1M2QxODk1OWQ0YWUyOWFkODg1YjJkNGUwOWY5N2E4YTRlZjEyNDE1YzAxNzg3OWQyNjljIn0.eyJhdWQiOiIyIiwianRpIjoiYzZhM2Y5OWJjMGRmYTkyMDY3ODQ5NjBkZjU2NzUzZDE4OTU5ZDRhZTI5YWQ4ODViMmQ0ZTA5Zjk3YThhNGVmMTI0MTVjMDE3ODc5ZDI2OWMiLCJpYXQiOjE1NjkzMzU1NzEsIm5iZiI6MTU2OTMzNTU3MSwiZXhwIjoxNjAwOTU3OTcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QFUSWU7PoWhk3dtKVjQURZpnBxlC0-9oVOKs3dqh1tTO3j8UL_hqTll7TqMV84WoTN_QhhDLKPgvxpfo_1VEATcg7qjpBhfyj5jITtnVvMxARU-8l_Ho86hJXH5ZdWFhNCksQnSGVhd6eatmHcm6CJGrxlxnRkRaBcAXtJ_Iu01-RB6jUsVn5oZqMn9zDGp0TrgNp8K1tg-6LUZavi8RR2Ztx3dYv6t1h9dKJcGGFRD0xU7dz8UTWgV0HkTB_WWx8AM3odpsrvQ6ka2mO_Ifw_RW5Rd0B6kPt_qPIQJ-d_Rp9b6z-GU9XzirvN6TFBbI1MZ_8A7-w0NUoxjjUWCvwUV98cy86ism897qxolocs3SFfHwVvRbbpMzPFxotq4N1r-YQWBMsqvm4vrMYHbw___s8f6_icNOs4hYTxYE54NS5a8ogrCaeTe-gVAI2aQVl-uVpXwbH4lu0lZ9e1F4l9YSqWew9cQd2DmpkIcgsn2DU6TbDb2ZPPNN5_koAtnCBiXVXJiWkkrrOkYRrU69dm3ByJtqjGkzqrAIr1FqlJreZa_43pnbM_iu6t1B7GbXKEGfwSXVMWayQyZjM4wgbxWT3zGVMNy4mXe0IcJ1fUtZgyWJf-h4x65V8In-dVO3LhHOGdMtZDOhelYaEkLTEbi7qAccmL3HNDHDJDeuKFQ",
     "Accept": "application/json",
     "Content-Type": "application/json",
 }
