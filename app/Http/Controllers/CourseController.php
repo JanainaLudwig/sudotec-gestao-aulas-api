@@ -2,11 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Course\StoreCourseRequest;
 use App\Models\Course;
+use App\Repositories\Course\CourseRepository;
 use Illuminate\Http\Request;
 
 class CourseController extends Controller
 {
+
+    /**
+     * @var CourseRepository
+     */
+    private $courseRepository;
+
+    public function __construct(CourseRepository $courseRepository)
+    {
+
+        $this->courseRepository = $courseRepository;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +28,9 @@ class CourseController extends Controller
      */
     public function index()
     {
-        //
+        $courses = $this->courseRepository->all();
+
+        return response()->json(['data' => $courses]);
     }
 
     /**
@@ -23,9 +39,11 @@ class CourseController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreCourseRequest $request)
     {
-        //
+        $course = $this->courseRepository->create($request);
+
+        return response()->json(['data' => $course]);
     }
 
     /**
@@ -36,7 +54,7 @@ class CourseController extends Controller
      */
     public function show(Course $course)
     {
-        //
+        return response()->json(['data' => $course]);
     }
 
     /**
@@ -48,7 +66,9 @@ class CourseController extends Controller
      */
     public function update(Request $request, Course $course)
     {
-        //
+        $course = $this->courseRepository->update($course, $request);
+
+        return response()->json(['data' => $course]);
     }
 
     /**
@@ -59,6 +79,8 @@ class CourseController extends Controller
      */
     public function destroy(Course $course)
     {
-        //
+        $this->courseRepository->delete($course);
+
+        return response()->json(['message' => 'Course deleted']);
     }
 }

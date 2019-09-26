@@ -2,17 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b989fb7-93c1-45cf-85a2-b03815925906" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Traits/Image/HasImage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/294684a7-2944-4a29-a0a1-c2ce41c12065.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/294684a7-2944-4a29-a0a1-c2ce41c12065.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Project/UpdateProjectRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Project/UpdateProjectRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Course.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Course.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Project.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Project.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Traits/HasImage.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_09_101923_create_projects_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_09_101923_create_projects_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/collection.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/docs/collection.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/docs/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/source/.compare.md" beforeDir="false" afterPath="$PROJECT_DIR$/public/docs/source/.compare.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/source/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/public/docs/source/index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Project/ProjectRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Project/ProjectRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Traits/Image/HasImage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/Image/HasImage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Traits/Image/ModelHasImageRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_09_102003_create_courses_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_09_102003_create_courses_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/UsersSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -53,13 +55,6 @@
         <item name="sudotec@192.168.10.10" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="sudotec: schema" type="76f4a085:MysqlImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="sudotec@192.168.10.10" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="sudotec: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="projects: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -193,7 +188,7 @@
     <property name="DatabaseDriversLRU" value="mysql&#10;mariadb" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/homestead" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Repositories/Course" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -210,11 +205,11 @@
       <recent name="C:\Dev\Oficina 2\api\app\Traits\Image" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Dev\Oficina 2\api\app\Repositories\Course" />
       <recent name="C:\Dev\Oficina 2\api\homestead" />
       <recent name="C:\Dev\Oficina 2\api\resources\views" />
       <recent name="C:\Dev\Oficina 2\api\app" />
       <recent name="C:\Dev\Oficina 2\api\app\Models" />
-      <recent name="C:\Dev\Oficina 2\api\app\Http\Controllers" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -242,12 +237,12 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@46de6e0b" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@b7230eda" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@46de6e0b" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@cdc7553" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@b7230eda" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@660ebd39" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
           </expand>
           <select />
@@ -273,7 +268,8 @@
       <workItem from="1569009477308" duration="4052000" />
       <workItem from="1569176130505" duration="528000" />
       <workItem from="1569176838963" duration="1236000" />
-      <workItem from="1569261862135" duration="26229000" />
+      <workItem from="1569261862135" duration="39035000" />
+      <workItem from="1569514423810" duration="5482000" />
     </task>
     <servers />
   </component>

@@ -7,58 +7,32 @@ use App\User;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 /**
  * @group Passport login
  */
 class AuthController extends Controller
 {
-    /**
-     * Login
-     *
-     * @bodyParam username string required Email of the user
-     * @bodyParam password string required Password of the user
-     *
-     * @param Request $request
-     * @return \Illuminate\Http\JsonResponse|\Psr\Http\Message\StreamInterface
-     */
     public function login(Request $request)
     {
-        $http = new Client([
-            'base_uri' => config('app.url')
-        ]);
-
-        try {
-            $response = $http->post('/oauth/token', [
-                'form_params' => [
-                    'grant_type' => 'password',
-                    'client_id' => config('passport.grant.client_id'),
-                    'client_secret' => config('passport.grant.client_secret'),
-                    'username' => $request->username,
-                    'password' => $request->password,
-                ]
-            ]);
-        } catch (\GuzzleHttp\Exception\BadResponseException $e) {
-            if ($e->getCode() === 400) {
-                return response()->json(['message' => 'Invalid Request. Please enter a username and a password.', $e->getMessage()], $e->getCode());
-            } else if ($e->getCode() === 401) {
-                return response()->json(['message' => 'Your credentials are incorrect. Please try again.', $e->getMessage()], $e->getCode());
-            }
-            return response()->json(['message' => 'Something went wrong on the server.', $e->getMessage()], $e->getCode());
+        if (!Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+            return response()->json(['message' => 'Your credentials are incorrect. Please try again.'], 401);
         }
 
-        return $response->getBody();
+        $user = Auth::user();
+
+        $token =  $user->createToken(config('app.name'))->accessToken;
+
+        return response()->json(['access_token' => $token]);
     }
 
-    /**
-     * Logout
-     */
-    public function logout() {
-        $user = Auth::user()->token();
-        $user->revoke();
+    public function logout(Request $request)
+    {
+        if (Auth::check()) {
+            $request->user()->token()->delete();
+        }
 
-        return response()->json([
-            'message' => 'Unauthenticated',
-        ], 200);
+        return response()->json(['message' => 'User logged out.'], 200);
     }
 }

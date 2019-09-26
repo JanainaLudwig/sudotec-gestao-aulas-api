@@ -10,7 +10,5 @@ use App\Traits\Image\ModelHasImageRepository;
 
 class ProjectRepository extends AbstractRepository
 {
-    use ModelHasImageRepository;
-
     protected $model = Project::class;
 }

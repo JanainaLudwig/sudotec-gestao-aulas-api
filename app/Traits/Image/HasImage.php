@@ -19,10 +19,7 @@ trait HasImage
     public function setImageAttribute($value)
     {
         if (!$value) {
-            if ($this->attributes['image']) {
-                Storage::disk('public')->delete($this->attributes['image']);
-                $this->attributes['image'] = null;
-            }
+            $this->deleteImage();
 
             return;
         }
@@ -41,6 +38,14 @@ trait HasImage
 
     public function imageDirectory()
     {
-        return $this->imageDirectory ?? 'images';
+        return $this->filesDirectory ?? 'images';
+    }
+
+    protected function deleteImage()
+    {
+        if ($this->attributes['image']) {
+            Storage::disk('public')->delete($this->attributes['image']);
+            $this->attributes['image'] = null;
+        }
     }
 }
