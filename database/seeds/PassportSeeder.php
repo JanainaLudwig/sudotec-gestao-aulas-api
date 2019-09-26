@@ -32,5 +32,13 @@ class PassportSeeder extends Seeder
                 'revoked' => 0
             ],
         ]);
+
+        DB::table('oauth_personal_access_clients')->insert([
+            [
+                'client_id' => config('passport.access.client_id'),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+        ]);
     }
 }
