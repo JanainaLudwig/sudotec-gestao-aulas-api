@@ -19,7 +19,7 @@ class CreateCoursesTable extends Migration
             $table->string('name');
             $table->text('description')->nullable();
             $table->string('image');
-            $table->string('lesson_plan');
+            $table->string('lesson_plan')->nullable();
             $table->enum('status', ['active', 'inactive']);
             $table->timestamps();
 

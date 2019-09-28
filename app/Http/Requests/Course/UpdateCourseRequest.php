@@ -13,7 +13,7 @@ class UpdateCourseRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,10 @@ class UpdateCourseRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'project_id' => 'required|exists:projects,id',
+            'name' => 'required|string',
+            'description' => 'string',
+            'status' => 'required|in:active,inactive'
         ];
     }
 }

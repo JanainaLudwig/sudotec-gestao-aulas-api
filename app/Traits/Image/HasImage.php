@@ -5,6 +5,7 @@ namespace App\Traits\Image;
 
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 
 trait HasImage
@@ -24,7 +25,10 @@ trait HasImage
             return;
         }
 
-        $this->attributes['image'] = Storage::disk('public')->putFile("{$this->imageDirectory()}", $value);
+        if ($value instanceof UploadedFile) {
+            $this->deleteImage();
+            $this->attributes['image'] = Storage::disk('public')->putFile("{$this->imageDirectory()}", $value);
+        }
     }
 
     public function getImageAttribute($value)
@@ -43,7 +47,7 @@ trait HasImage
 
     protected function deleteImage()
     {
-        if ($this->attributes['image']) {
+        if (isset($this->attributes['image'])) {
             Storage::disk('public')->delete($this->attributes['image']);
             $this->attributes['image'] = null;
         }

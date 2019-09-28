@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Traits\Image\HasImage;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 
 class Course extends Model
@@ -29,6 +30,10 @@ class Course extends Model
 
     public function setLessonPlanAttribute($value)
     {
+        if ($value instanceof UploadedFile && isset($this->attributes['lesson_plan'])) {
+            Storage::disk('public')->delete($this->attributes['lesson_plan']);
+        }
+
         $this->attributes['lesson_plan'] = Storage::disk('public')->putFile($this->filesDirectory, $value);
     }
 

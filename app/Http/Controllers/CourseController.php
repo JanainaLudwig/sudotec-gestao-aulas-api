@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Course\StoreCourseRequest;
+use App\Http\Requests\Course\UpdateCourseRequest;
 use App\Models\Course;
 use App\Repositories\Course\CourseRepository;
 use Illuminate\Http\Request;
@@ -17,7 +18,6 @@ class CourseController extends Controller
 
     public function __construct(CourseRepository $courseRepository)
     {
-
         $this->courseRepository = $courseRepository;
     }
 
@@ -60,11 +60,11 @@ class CourseController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Course  $course
+     * @param UpdateCourseRequest $request
+     * @param \App\Models\Course $course
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Course $course)
+    public function update(UpdateCourseRequest $request, Course $course)
     {
         $course = $this->courseRepository->update($course, $request);
 
