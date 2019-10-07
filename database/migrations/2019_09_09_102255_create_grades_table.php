@@ -16,7 +16,7 @@ class CreateGradesTable extends Migration
         Schema::create('grades', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('course_id');
-            $table->unsignedBigInteger('professor_id');
+            $table->unsignedBigInteger('teacher_id');
             $table->string('name');
             $table->text('resources')->nullable();
             $table->string('shift');
@@ -26,7 +26,7 @@ class CreateGradesTable extends Migration
             $table->timestamps();
 
             $table->foreign('course_id')->references('id')->on('courses');
-            $table->foreign('professor_id')->references('id')->on('users');
+            $table->foreign('teacher_id')->references('id')->on('users');
         });
     }
 

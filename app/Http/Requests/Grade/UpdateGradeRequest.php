@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Course;
+namespace App\Http\Requests\Grade;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreCourseRequest extends FormRequest
+class UpdateGradeRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,12 +24,7 @@ class StoreCourseRequest extends FormRequest
     public function rules()
     {
         return [
-            'project_id' => 'required|exists:projects,id',
-            'name' => 'required|string',
-            'description' => 'string',
-            'image' => 'required|image',
-            'lesson_plan' => 'file',
-            'status' => 'required|in:active,inactive'
+            //
         ];
     }
 }
