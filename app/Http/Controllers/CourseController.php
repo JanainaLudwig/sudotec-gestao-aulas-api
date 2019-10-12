@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Course\StoreCourseRequest;
 use App\Http\Requests\Course\UpdateCourseRequest;
+use App\Http\Resources\Course\CourseResource;
 use App\Models\Course;
 use App\Repositories\Course\CourseRepository;
 use Illuminate\Http\Request;
@@ -24,13 +25,13 @@ class CourseController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
     public function index()
     {
         $courses = $this->courseRepository->all();
 
-        return response()->json(['data' => $courses]);
+        return CourseResource::collection($courses);
     }
 
     /**
@@ -50,11 +51,11 @@ class CourseController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Course  $course
-     * @return \Illuminate\Http\Response
+     * @return CourseResource
      */
     public function show(Course $course)
     {
-        return response()->json(['data' => $course]);
+        return new CourseResource($course);
     }
 
     /**

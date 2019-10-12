@@ -28,6 +28,11 @@ class Course extends Model
         return $this->belongsTo(Project::class);
     }
 
+    public function grades()
+    {
+        return $this->hasMany(Grade::class);
+    }
+
     public function setLessonPlanAttribute($value)
     {
         if ($value instanceof UploadedFile && isset($this->attributes['lesson_plan'])) {

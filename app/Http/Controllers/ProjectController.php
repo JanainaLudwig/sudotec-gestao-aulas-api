@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Project\StoreProjectRequest;
 use App\Http\Requests\Project\UpdateProjectRequest;
+use App\Http\Resources\Project\ProjectResource;
 use App\Models\Project;
 use App\Repositories\Project\ProjectRepository;
 use Illuminate\Http\Request;
@@ -25,13 +26,13 @@ class ProjectController extends Controller
      * All projects
      *
      * @authenticated
-     * @return Project[]|\Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
     public function index()
     {
         $projects = $this->projectRepository->all();
 
-        return response()->json(['data' => $projects]);
+        return ProjectResource::collection($projects);
     }
 
     /**
@@ -57,7 +58,7 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        return response()->json(['data' => $project]);
+        return new ProjectResource($project);
     }
 
     /**
