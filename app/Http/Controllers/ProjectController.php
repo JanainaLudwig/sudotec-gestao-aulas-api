@@ -14,7 +14,6 @@ use Illuminate\Http\Request;
  */
 class ProjectController extends Controller
 {
-
     private $projectRepository;
 
     public function __construct(ProjectRepository $projectRepository)
@@ -70,11 +69,11 @@ class ProjectController extends Controller
      * @bodyParam image image required Image of the project
      * @bodyParam status string required Status of the project (enum: ['active', 'inactive'])
      */
-    public function update(UpdateProjectRequest $request, Project $project, ProjectRepository $projectRepository)
+    public function update(UpdateProjectRequest $request, Project $project)
     {
         $project = $this->projectRepository->update($project, $request);
 
-        return response()->json(['data' => $project]);
+        return new ProjectResource($project);
     }
 
     /**

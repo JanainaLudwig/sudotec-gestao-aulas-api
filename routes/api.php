@@ -24,6 +24,7 @@ Route::middleware(['auth:api', 'role:admin'])->group(function () {
     Route::apiResource('courses', 'CourseController');
     Route::apiResource('students', 'StudentController');
     Route::apiResource('grades', 'GradeController');
+    Route::apiResource('lessons', 'LessonController')->except(['all']);
 
     Route::get('teachers', 'TeacherController@index');
     Route::get('teachers/{id}', 'TeacherController@show');

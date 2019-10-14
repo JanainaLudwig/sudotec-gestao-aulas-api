@@ -18,5 +18,12 @@ class UsersSeeder extends Seeder
             'password' => bcrypt('12345678'),
             'type' => 'admin',
         ]);
+
+        $user = \App\User::create([
+            'name' => 'John Doe',
+            'email' => 'john@sudotec.test',
+            'password' => bcrypt('12345678'),
+            'type' => 'teacher',
+        ]);
     }
 }

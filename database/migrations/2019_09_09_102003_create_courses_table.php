@@ -18,7 +18,7 @@ class CreateCoursesTable extends Migration
             $table->unsignedBigInteger('project_id');
             $table->string('name');
             $table->text('description')->nullable();
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->string('lesson_plan')->nullable();
             $table->enum('status', ['active', 'inactive']);
             $table->timestamps();

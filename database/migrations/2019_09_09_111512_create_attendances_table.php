@@ -17,7 +17,7 @@ class CreateAttendancesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('lesson_id');
             $table->unsignedBigInteger('student_id');
-            $table->enum('presence', ['P', 'A', 'J', 'D']); // Presente / Ausente / Justificado / Descartado
+            $table->enum('presence', ['P', 'A', 'J', 'D']); // Presente / Ausente / Justificado / Descartado TODO: verifcar neccessidade do descartado
             $table->timestamps();
 
             $table->foreign('lesson_id')->references('id')->on('lessons');

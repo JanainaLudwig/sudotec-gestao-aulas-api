@@ -6,18 +6,16 @@ use App\Http\Requests\Course\StoreCourseRequest;
 use App\Http\Requests\Course\UpdateCourseRequest;
 use App\Http\Resources\Course\CourseResource;
 use App\Models\Course;
-use App\Repositories\Course\CourseRepository;
+use App\Repositories\Course\AttendanceRepository;
+use App\Repositories\Course\LessonRepository;
 use Illuminate\Http\Request;
 
 class CourseController extends Controller
 {
 
-    /**
-     * @var CourseRepository
-     */
     private $courseRepository;
 
-    public function __construct(CourseRepository $courseRepository)
+    public function __construct(AttendanceRepository $courseRepository)
     {
         $this->courseRepository = $courseRepository;
     }
