@@ -17,6 +17,7 @@ class CreateLessonsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('grade_id');
             $table->string('description');
+            $table->date('grade_date');
             $table->timestamps();
 
             $table->foreign('grade_id')->references('id')->on('grades');

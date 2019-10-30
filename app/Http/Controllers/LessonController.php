@@ -7,6 +7,8 @@ use App\Http\Resources\Lesson\LessonResource;
 use App\Models\Lesson;
 use App\Repositories\Lesson\LessonRepository;
 use Illuminate\Http\Request;
+use Spatie\QueryBuilder\AllowedFilter;
+use Spatie\QueryBuilder\QueryBuilder;
 
 class LessonController extends Controller
 {
@@ -21,11 +23,17 @@ class LessonController extends Controller
      *
      * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
-    public function index()
+    public function index(Request $request)
     {
-        $projects = $this->lessonRepository->all();
+        $gradeId = $request->input('grade_id');
 
-        return AttendanceResource::collection($projects);
+        if ($gradeId) {
+            $lessons = Lesson::where('grade_id', $gradeId)->get();
+        } else {
+            $lessons = $this->lessonRepository->all();
+        }
+
+        return LessonResource::collection($lessons);
     }
 
     /**

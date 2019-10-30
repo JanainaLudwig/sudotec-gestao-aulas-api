@@ -8,6 +8,10 @@ class Attendance extends Model
 {
     protected $fillable = ['lesson_id', 'student_id', 'presence'];
 
+    protected $casts = [
+        'grade_date' => 'datetime:Y-m-d',
+    ];
+
     public function lesson() {
         return $this->belongsTo(Lesson::class);
     }
@@ -19,5 +23,10 @@ class Attendance extends Model
     public function justification()
     {
         return $this->hasOne(Justification::class);
+    }
+
+    public function needsJustification()
+    {
+        return $this->presence === 'J';
     }
 }

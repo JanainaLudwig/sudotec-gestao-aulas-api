@@ -17,6 +17,7 @@ class LessonResource extends JsonResource
     {
         $appendData = [
             'attendances' => AttendanceResource::collection($this->attendances),
+            'frequency' => $this->frequency()
         ];
 
         return array_merge(parent::toArray($request), $appendData);

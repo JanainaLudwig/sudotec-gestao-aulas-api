@@ -16,6 +16,7 @@ class AttendanceResource extends JsonResource
     {
         $appendData = [
             'justification' => $this->justification,
+            'name' => $this->student->name
         ];
 
         return array_merge(parent::toArray($request), $appendData);

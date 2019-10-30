@@ -3,10 +3,12 @@
 
 namespace App\Repositories\Lesson;
 
+use App\Models\Attendance;
 use App\Models\Lesson;
 use App\Repositories\AbstractRepository;
 use App\Repositories\Attendance\AttendanceRepository;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 
 class LessonRepository extends AbstractRepository
 {
@@ -25,7 +27,10 @@ class LessonRepository extends AbstractRepository
     {
         $model = parent::create($data);
 
-        $model->attendances()->createMany($data['attendances']);
+        foreach ($data['attendances'] as $attendance) {
+            $this->attendanceRepository
+                ->create(new Request(array_merge($attendance, ['lesson_id' => $model->id])));
+        }
 
         return $model;
     }
@@ -36,7 +41,13 @@ class LessonRepository extends AbstractRepository
         $model->save();
 
         if ($data['attendances']) {
-            
+            foreach ($data['attendances'] as $attendance) {
+                $this->attendanceRepository
+                    ->update(
+                        Attendance::find($attendance['id']),
+                        new Request(array_merge($attendance, ['lesson_id' => $model->id]))
+                    );
+            }
         }
 
         return $model;

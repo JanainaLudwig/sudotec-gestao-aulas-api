@@ -13,6 +13,12 @@ class Grade extends Model
         'final_date', 'registration_date_limit',
     ];
 
+    protected $casts = [
+        'initial_date' => 'datetime:Y-m-d',
+        'final_date' => 'datetime:Y-m-d',
+        'registration_date_limit' => 'datetime:Y-m-d',
+    ];
+
     protected $dates = ['initial_date', 'final_date', 'registration_date_limit'];
 
     public function teacher()
