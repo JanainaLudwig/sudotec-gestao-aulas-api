@@ -6,8 +6,7 @@ use App\Http\Requests\Course\StoreCourseRequest;
 use App\Http\Requests\Course\UpdateCourseRequest;
 use App\Http\Resources\Course\CourseResource;
 use App\Models\Course;
-use App\Repositories\Course\AttendanceRepository;
-use App\Repositories\Course\LessonRepository;
+use App\Repositories\Attendance\AttendanceRepository;
 use Illuminate\Http\Request;
 
 class CourseController extends Controller
