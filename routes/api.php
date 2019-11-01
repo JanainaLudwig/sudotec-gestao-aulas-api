@@ -24,6 +24,8 @@ Route::middleware(['auth:api', 'role:admin'])->group(function () {
     Route::apiResource('courses', 'CourseController');
     Route::apiResource('students', 'StudentController');
     Route::apiResource('grades', 'GradeController');
+    Route::get('/grades/{grade}/students/search', 'GradeStudentController@searchNotIn');
+    Route::apiResource('grades.students', 'GradeStudentController')->except(['show', 'update']);
     Route::apiResource('lessons', 'LessonController')->except(['all']);
 
     Route::get('teachers', 'TeacherController@index');

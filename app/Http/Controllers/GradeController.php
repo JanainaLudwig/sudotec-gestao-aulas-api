@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Grade\StoreGradeRequest;
 use App\Http\Requests\Grade\UpdateGradeRequest;
 use App\Http\Resources\Grade\GradeResource;
+use App\Http\Resources\Grade\GradeStudentResource;
 use App\Models\Grade;
 use App\Repositories\Grade\GradeRepository;
 
@@ -49,6 +50,8 @@ class GradeController extends Controller
      */
     public function show(Grade $grade)
     {
+        $grade['students'] = $this->gradeRepository->getStudentsWithFrequency($grade);
+
         return response()->json(new GradeResource($grade));
     }
 

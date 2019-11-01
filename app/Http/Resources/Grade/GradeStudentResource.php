@@ -2,10 +2,9 @@
 
 namespace App\Http\Resources\Grade;
 
-use App\Http\Resources\Lesson\LessonResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class GradeResource extends JsonResource
+class GradeStudentResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,11 +15,7 @@ class GradeResource extends JsonResource
     public function toArray($request)
     {
         $appendData = [
-            'course' => $this->course,
-            'teacher' => $this->teacher,
-            'project_id' => $this->course->project_id,
-            'lessons' => LessonResource::collection($this->lessons),
-            'students' => GradeStudentResource::collection($this['students']),
+            'age' => $this->age,
         ];
 
         return array_merge(parent::toArray($request), $appendData);

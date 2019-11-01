@@ -19,6 +19,8 @@ class CreateGradeStudentTable extends Migration
             $table->unsignedBigInteger('student_id');
             $table->timestamps();
 
+            $table->unique(['grade_id', 'student_id']);
+
             $table->foreign('student_id')->references('id')->on('students');
             $table->foreign('grade_id')->references('id')->on('grades');
         });
