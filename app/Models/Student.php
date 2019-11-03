@@ -8,7 +8,7 @@ use Illuminate\Support\Carbon;
 
 class Student extends Model
 {
-    protected $fillable = ['name', 'gender', 'rg', 'cpf', 'email', 'phone', 'hometown', 'address', 'birth_date'];
+    protected $fillable = ['name', 'gender', 'rg', 'cpf', 'email', 'phone', 'mother_name', 'hometown', 'address', 'birth_date'];
     protected $dates = ['birth_date'];
 
     protected static function boot()

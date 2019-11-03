@@ -15,6 +15,7 @@ $factory->define(Student::class, function (Faker $faker) {
         'email' => $faker->email,
         'phone' => $faker->phoneNumber,
         'hometown' => $faker->city,
+        'mother_name' => $faker->name('female'),
         'address' => $faker->streetAddress,
         'birth_date' => $faker->date(),
     ];

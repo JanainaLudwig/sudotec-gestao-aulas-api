@@ -22,6 +22,7 @@ class CreateStudentsTable extends Migration
             $table->string('email')->nullable();
             $table->string('phone');
             $table->string('hometown');
+            $table->string('mother_name');
             $table->string('address');
             $table->date('birth_date');
             $table->timestamps();
