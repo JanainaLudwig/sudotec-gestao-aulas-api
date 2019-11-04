@@ -19,7 +19,7 @@ class CreateJustificationsTable extends Migration
             $table->string('justification')->nullable();
             $table->timestamps();
 
-            $table->foreign('attendance_id')->references('id')->on('attendances');
+            $table->foreign('attendance_id')->references('id')->on('attendances')->onDelete('cascade');
         });
     }
 

@@ -53,8 +53,12 @@ class GradeStudentController extends Controller
         }
     }
 
-    public function delete(Grade $grade, Student $student)
+    public function destroy(Grade $grade, Student $student)
     {
         $grade->students()->detach($student->id);
+
+        foreach ($grade->lessons as $lesson) {
+            $lesson->attendances()->where('student_id', $student->id)->delete();
+        }
     }
 }

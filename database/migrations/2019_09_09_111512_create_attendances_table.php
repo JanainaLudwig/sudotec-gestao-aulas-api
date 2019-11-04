@@ -20,8 +20,8 @@ class CreateAttendancesTable extends Migration
             $table->enum('presence', ['P', 'A', 'J', 'D']); // Presente / Ausente / Justificado / Descartado TODO: verifcar neccessidade do descartado
             $table->timestamps();
 
-            $table->foreign('lesson_id')->references('id')->on('lessons');
-            $table->foreign('student_id')->references('id')->on('students');
+            $table->foreign('lesson_id')->references('id')->on('lessons')->onDelete('cascade');
+            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
         });
     }
 
