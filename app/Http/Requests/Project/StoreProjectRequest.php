@@ -26,7 +26,7 @@ class StoreProjectRequest extends FormRequest
         return [
             'name' => 'required|string',
             'description' => 'string',
-            'image' => 'required',
+            'image' => 'required|image',
             'status' => 'in:active,inactive',
         ];
     }
