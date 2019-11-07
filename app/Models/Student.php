@@ -11,6 +11,10 @@ class Student extends Model
     protected $fillable = ['name', 'gender', 'rg', 'cpf', 'email', 'phone', 'mother_name', 'hometown', 'address', 'birth_date'];
     protected $dates = ['birth_date'];
 
+    protected $casts = [
+        'birth_date' => 'datetime:Y-m-d',
+    ];
+    
     protected static function boot()
     {
         parent::boot();

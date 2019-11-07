@@ -17,7 +17,9 @@ class Lesson extends Model
         $total = $this->attendances()->count();
         $presenceCount = $this->attendances()->whereIn('presence', ['P', 'J'])->count();
 
-//        return "total: $total;;;;;; presencecount: $presenceCount";
+        if ($total === 0) {
+            return 100;
+        }
 
         return number_format(($presenceCount / $total) * 100, 0);
 
