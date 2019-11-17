@@ -14,8 +14,3 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
-// Reset password form
-Route::get('/login/recuperar', function () {
-
-})->name('password.reset');

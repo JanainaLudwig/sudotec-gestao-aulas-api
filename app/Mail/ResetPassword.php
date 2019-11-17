@@ -33,7 +33,7 @@ class ResetPassword extends Mailable
     {
         return $this->from(config('mail.from.resetPassword'))
             ->replyTo(config('mail.from.resetPassword'))
-            ->subject("Recuperação de senha - Grupo Doce Doc'ê")
+            ->subject("Recuperação de senha - Sudotec Aulas")
             ->view('emails.auth.resetPassword')
             ->with('token', $this->token)
             ->with('user', $this->user);

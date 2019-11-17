@@ -24,6 +24,7 @@ Route::middleware(['auth:api', 'role:admin'])->group(function () {
     Route::apiResource('courses', 'CourseController');
     Route::apiResource('students', 'StudentController');
     Route::apiResource('grades', 'GradeController');
+    Route::apiResource('users', 'UserController')->except(['store']);
     Route::get('/grades/{grade}/students/search', 'GradeStudentController@searchNotIn');
     Route::apiResource('grades.students', 'GradeStudentController')->except(['show', 'update']);
     Route::apiResource('lessons', 'LessonController')->except(['all']);
@@ -44,9 +45,6 @@ Route::prefix('auth')->namespace('Auth')->group(function () {
         Route::middleware(['auth:api', 'role:admin'])->post('/register', 'RegisterController@register');
         Route::post('/password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('password.email');
         Route::post('/password/reset', 'ResetPasswordController@reset')->name('password.update');
-        Route::post('/complete-register', function () {
-
-        })->name('register.complete');
     });
 
     Route::middleware('auth:api')->group(function () {
@@ -54,5 +52,5 @@ Route::prefix('auth')->namespace('Auth')->group(function () {
     });
 });
 
-Route::middleware(['auth:api', 'role:admin'])->get('/user', 'UserController@show');
+Route::middleware(['auth:api'])->get('/user', 'UserController@authUser');
 Route::middleware(['auth:api', 'role:admin'])->get('/users', 'UserController@index');
