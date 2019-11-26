@@ -31,6 +31,11 @@ class ForgotPasswordController extends Controller
         $this->middleware('guest');
     }
 
+    protected function validateEmail(Request $request)
+    {
+        $request->validate(['email' => 'required|email|exists:users,email']);
+    }
+
     protected function sendResetLinkResponse(Request $request, $response)
     {
         return response()->json([

@@ -2,11 +2,14 @@
 
 namespace App;
 
+use App\Mail\ResetPassword;
+use App\Mail\Welcome;
 use App\Models\Grade;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Mail;
 use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
@@ -48,5 +51,12 @@ class User extends Authenticatable
     public function scopeTeacher($query)
     {
         return $query->where('type', 'teacher');
+    }
+
+    public function sendPasswordResetNotification($token)
+    {
+        Mail::to($this)->send(new ResetPassword($this, $token));
+
+//        $this->notify(new ResetPasswordNotification($token));
     }
 }

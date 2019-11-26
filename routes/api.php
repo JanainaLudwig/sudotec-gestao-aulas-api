@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 
-Route::middleware(['auth:api', 'role:admin'])->group(function () {
+Route::middleware(['auth:api'])->group(function () {
     Route::apiResource('projects', 'ProjectController');
     Route::apiResource('courses', 'CourseController');
     Route::apiResource('students', 'StudentController');
@@ -31,6 +31,9 @@ Route::middleware(['auth:api', 'role:admin'])->group(function () {
 
     Route::get('teachers', 'TeacherController@index');
     Route::get('teachers/{id}', 'TeacherController@show');
+
+    // Stats
+    Route::get('/stats', 'StatsController@index');
 });
 
 
@@ -53,4 +56,4 @@ Route::prefix('auth')->namespace('Auth')->group(function () {
 });
 
 Route::middleware(['auth:api'])->get('/user', 'UserController@authUser');
-Route::middleware(['auth:api', 'role:admin'])->get('/users', 'UserController@index');
+Route::middleware(['auth:api'])->get('/users', 'UserController@index');
