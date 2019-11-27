@@ -6,10 +6,20 @@ namespace App\Repositories\Grade;
 
 use App\Models\Grade;
 use App\Repositories\AbstractRepository;
+use Illuminate\Database\Eloquent\Collection;
 
 class GradeRepository extends AbstractRepository
 {
     protected $model = Grade::class;
+
+    public function all() : Collection
+    {
+        if (auth()->user()->type === 'admin') {
+            return $this->model::all();
+        }
+
+        return auth()->user()->grades;
+    }
 
     public function getStudentsWithFrequency($grade)
     {
