@@ -19,12 +19,12 @@ class StudentRepository extends AbstractRepository
 
         $ages['10-'] = $this->getStudentsAgeCount(10, true);
 
-        $searches = [[11, 14], [15, 17], [18, 30]];
+        $searches = [[11, 14], [15, 17], [18, 25], [26, 36]];
         foreach ($searches as $search) {
             $ages["{$search[0]} - {$search[1]}"] = $this->getStudentsAgeBetweenCount($search);
         }
 
-        $ages['31+'] = $this->getStudentsAgeCount(31);
+        $ages['37+'] = $this->getStudentsAgeCount(37);
 
         $result = [];
         foreach ($ages as $age => $students) {

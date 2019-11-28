@@ -25,6 +25,12 @@ class GradeStudentController extends Controller
         return GradeStudentResource::collection($students);
     }
 
+    public function studentsWithAttendance(Grade $grade) {
+        $data = $this->gradeRepository->studentsWithAttendance($grade);
+
+        return response()->json(['data' => $data]);
+    }
+
     public function searchNotIn(Request $request, Grade $grade)
     {
         $gradeStudentsIds = $grade->students()->get()->pluck('id')->toArray();

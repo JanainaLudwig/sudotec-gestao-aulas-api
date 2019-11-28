@@ -49,4 +49,16 @@ class GradeRepository extends AbstractRepository
 
         return $students;
     }
+
+    public function studentsWithAttendance($grade) {
+        $lessonsId = $grade->lessons()->orderBy('grade_date')->get()->pluck('id')->toArray();
+
+        return $grade->students()
+            ->orderBy('name', 'asc')
+            ->with(['attendances' => function($query) use ($lessonsId) {
+                $query->whereIn('lesson_id', $lessonsId)
+                    ->join('lessons', 'lessons.id', 'attendances.lesson_id')
+                    ->orderBy('grade_date');
+            }])->get();
+    }
 }

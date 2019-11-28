@@ -8,6 +8,15 @@ class Lesson extends Model
 {
     protected $fillable = ['grade_id', 'description', 'grade_date'];
 
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope('order', function ($builder) {
+            $builder->orderBy('grade_date', 'asc');
+        });
+    }
+
     public function attendances()
     {
         return $this->hasMany(Attendance::class);
