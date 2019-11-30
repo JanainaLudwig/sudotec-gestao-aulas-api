@@ -6,8 +6,13 @@ use App\Http\Requests\Grade\StoreGradeRequest;
 use App\Http\Requests\Grade\UpdateGradeRequest;
 use App\Http\Resources\Grade\GradeResource;
 use App\Http\Resources\Grade\GradeStudentResource;
+use App\Http\Resources\Lesson\LessonResource;
 use App\Models\Grade;
+use App\Models\Lesson;
+use App\Models\Student;
 use App\Repositories\Grade\GradeRepository;
+use Illuminate\Support\Facades\Request;
+use Spatie\QueryBuilder\QueryBuilder;
 
 class GradeController extends Controller
 {
@@ -24,7 +29,7 @@ class GradeController extends Controller
      */
     public function index()
     {
-        $grades = $this->gradeRepository->all();
+        $grades = Grade::with(['course', 'teacher'])->get();
 
         return GradeResource::collection($grades);
     }

@@ -19,8 +19,8 @@ class GradeResource extends JsonResource
             'course' => $this->course,
             'teacher' => $this->teacher,
             'project_id' => $this->course->project_id,
-            'lessons' => LessonResource::collection($this->lessons),
-            'students' => GradeStudentResource::collection($this['students']),
+//            'lessons' => LessonResource::collection($this->lessons),
+//            'students' => GradeStudentResource::collection($this->whenLoaded('students')),
         ];
 
         return array_merge(parent::toArray($request), $appendData);

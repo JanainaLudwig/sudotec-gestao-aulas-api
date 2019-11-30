@@ -33,6 +33,8 @@ class LessonController extends Controller
             $lessons = $this->lessonRepository->all();
         }
 
+        $lessons->load(['attendances', 'attendances.justification']);
+
         return LessonResource::collection($lessons);
     }
 
@@ -46,7 +48,7 @@ class LessonController extends Controller
     {
         $lesson = $this->lessonRepository->create($request);
 
-        return new LessonResource($lesson);
+        return response()->json(['message' => 'Success']);
     }
 
     /**
@@ -71,7 +73,7 @@ class LessonController extends Controller
     {
         $lesson = $this->lessonRepository->update($lesson, $request);
 
-        return new LessonResource($lesson);
+        return response()->json(['message' => 'Success']);
     }
 
     /**

@@ -25,7 +25,27 @@ class GradeRepository extends AbstractRepository
     {
         $lessonsIds = $grade->lessons()->get()->pluck('id')->toArray();
 
-        $students = $grade->students->loadCount([
+        $students = $this->addStudentsFrequency($grade->students, $lessonsIds);
+
+        return $students;
+    }
+
+    public function studentsWithAttendance($grade) {
+        $lessonsId = $grade->lessons()->orderBy('grade_date')->get()->pluck('id')->toArray();
+
+        $students = $grade->students()
+            ->orderBy('name', 'asc')
+            ->with(['attendances' => function($query) use ($lessonsId) {
+                $query->whereIn('lesson_id', $lessonsId)
+                    ->join('lessons', 'lessons.id', 'attendances.lesson_id')
+                    ->orderBy('grade_date');
+            }])->get();
+
+        return $this->addStudentsFrequency($students, $lessonsId);
+    }
+
+    private function addStudentsFrequency($students, $lessonsIds) {
+        $students = $students->loadCount([
             'attendances as attendances_count' => function($query) use ($lessonsIds) {
                 $query->whereIn('lesson_id', $lessonsIds);
             },
@@ -48,17 +68,5 @@ class GradeRepository extends AbstractRepository
         });
 
         return $students;
-    }
-
-    public function studentsWithAttendance($grade) {
-        $lessonsId = $grade->lessons()->orderBy('grade_date')->get()->pluck('id')->toArray();
-
-        return $grade->students()
-            ->orderBy('name', 'asc')
-            ->with(['attendances' => function($query) use ($lessonsId) {
-                $query->whereIn('lesson_id', $lessonsId)
-                    ->join('lessons', 'lessons.id', 'attendances.lesson_id')
-                    ->orderBy('grade_date');
-            }])->get();
     }
 }
